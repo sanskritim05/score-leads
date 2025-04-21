@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RFIC Score App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+      <h1>Upload Submission File</h1>
+      <form action="/" method="post" enctype="multipart/form-data">
+          <input type="file" name="file" required>
+          <input type="submit" value="Get Score" class="btn">
+      </form>
+
+      {% if results %}
+          <h2>Results</h2>
+          <table>
+              <tr>
+                  <th>Client Name</th>
+                  <th>Score</th>
+                  <th>Max Score</th>
+              </tr>
+              {% for result in results %}
+              <tr>
+                  <td>{{ result['Client Name'] }}</td>
+                  <td>{{ result['Score'] }}</td>
+                  <td>{{ result['Max Score'] }}</td>
+              </tr>
+              {% endfor %}
+          </table>
+          <a href="{{ url_for('static', filename='results.csv') }}" download class="btn">Download Results CSV</a>
+      {% endif %}
+  </div>
+</body>
+</html>
