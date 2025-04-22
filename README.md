@@ -5,7 +5,7 @@ This is a simple web application built with Flask that automates the scoring of 
  Live Demo
 
 You can access the live app here:  
-👉 [https://rfic-score-app.onrender.com](https://rfic-score-app.onrender.com)
+👉 [https://score-leads-rfic.onrender.com](https://score-leads-rfic.onrender.com)
 
 ---
 
